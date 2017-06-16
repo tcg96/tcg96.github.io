@@ -1,5 +1,5 @@
 function setup() {
-  createCanvas(900, 300); // you can change it to what you want, but if you don't use a 3/1 aspect ratio, it'll look more screwed up than the actual logo
+  createCanvas(windowWidth, windowWidth/3); // you can change it to what you want, but if you don't use a 3/1 aspect ratio, it'll look more screwed up than the actual logo
   var s = width/3, t = s*2;
   var stickx = s/4, sticky = height-stickx*2; // x and y coordinates for the first stick
   var stickwidth = s/10.5;
