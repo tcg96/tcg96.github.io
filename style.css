@@ -1,68 +1,63 @@
 body {
-            margin-top: 1em;
-            position: absolute;
-            left: 10%;
-            right: 10%;
-            padding: 0.5em;
-            border: 1px solid;
-            border-color: rgba(75, 75, 75, 1.00);
-            background-color: rgba(39, 39, 39, 1.00);
-            color: rgba(222, 222, 222, 1.00);
-            font-family: Roboto, Calibri, Helvetica, Arial, sans-serif;
-            }
+	margin-top: 1em;
+	position: absolute;
+	left: 10%;
+	right: 10%;
+	padding: 0.5em;
+	border: 1px solid;
+	border-color: rgba(75, 75, 75, 1.00);
+	background-color: rgba(39, 39, 39, 1.00);
+	color: rgba(222, 222, 222, 1.00);
+	font-family: Roboto, Calibri, Helvetica, Arial, sans-serif;
+}
 
-            a {color: rgba(106, 152, 175, 1.00);}
-            a:visited {color: rgba(166, 121, 210, 1.00);}
+a {color: rgba(106, 152, 175, 1.00);}
+a:visited {color: rgba(166, 121, 210, 1.00);}
 
-            .thecomputerguyninetysix {
-            background-color: rgba(51, 51, 51, 1.00);
-            margin: -0.5em;
-            padding: 0.5em;
-            }
+.thecomputerguyninetysix {
+	background-color: rgba(51, 51, 51, 1.00);
+	margin: -0.5em;
+	padding: 0.5em;
+}
 
-            h1 {
-            text-align: center;
-            font-size: 4vw;
-            }
+h1 {
+	font-size: 36pt;
+}
 
-            h2, h3 {
-            padding-top: 21px;
-            font-size: 1.5vw;
-            line-height: 1em;
-            text-align: left;
-            }
+h2, h3 {
+	padding-top: 21px;
+	font-size: 15pt;
+	line-height: 1em;
+	text-align: left;
+}
 
-            hr {border: 1px gray solid;}
+hr {border: 1px gray solid;}
 
-            .text {
-            text-align: justify;
-            font-size: 1vw;
-            }
+.text {
+	text-align: justify;
+	font-size: 12pt;
+}
 
-            ul {padding-right: 1em;}
+ul {padding-right: 1em;}
 
-            .towerofpisa {font-style: italic;}
-            .titanic {float: none;}
+.towerofpisa {font-style: italic;}
+.titanic {float: none;}
 
-            #bottom, .ad {
-            font-size: .8vw;
-            font-style: oblique;
-            color: dimgray;
-            text-align: left;
-            margin-top: 3em;
-            }
-            
-            .ad {font-style: normal;}
+#bottom, .ad {
+	font-size: 9pt;
+	font-style: oblique;
+	color: dimgray;
+	text-align: left;
+	margin-top: 3em;
+}
 
-            @media screen and (max-width: 1280px) {
-                h1 {font-size: 36pt;}
-                h2, h3 {font-size: 15pt;}
-                .text {font-size: 10pt;}
-                #bottom, .ad {font-size: 9pt;}
-            }
+.ad {font-style: normal;}
 
-            @media screen and (max-width: 336px) {
-                h1 {font-size: 24pt;}
-                h2, h3 {font-size: 12pt;}
-                .text {font-size: 9pt;}
-                #bottom, .ad {font-size: 6pt;}
+@media screen and (max-width: 1024px) {
+	h1 {
+		font-size: 24pt;
+		text-align: center;
+	}
+	h2, h3 {font-size: 12pt;}
+	.text {font-size: 9pt;}
+	#bottom, .ad {font-size: 6pt;}
