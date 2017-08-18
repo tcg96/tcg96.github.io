@@ -20,9 +20,7 @@ a:visited {color: rgba(166, 121, 210, 1.00);}
 	padding: 0.5em;
 }
 
-h1 {
-	font-size: 36pt;
-}
+h1 {font-size: 36pt;}
 
 h2, h3 {
 	padding-top: 21px;
@@ -43,6 +41,8 @@ ul {padding-right: 1em;}
 .towerofpisa {font-style: italic;}
 .titanic {float: none;}
 
+.bold {font-weight: bold;}
+
 #bottom, .ad {
 	font-size: 9pt;
 	font-style: oblique;
@@ -60,4 +60,4 @@ ul {padding-right: 1em;}
 	}
 	h2, h3 {font-size: 12pt;}
 	.text {font-size: 9pt;}
-	#bottom, .ad {font-size: 6pt;}
+	#bottom, .ad {font-size: 8pt;}
