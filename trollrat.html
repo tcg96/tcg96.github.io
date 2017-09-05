@@ -5,6 +5,11 @@
         <title>TrollRAT guide</title>
 		<link href="https://fonts.googleapis.com/css?family=Roboto:400,300,100,700" rel="stylesheet" type="text/css">
         <link href="style.css" rel="stylesheet" type="text/css">
+        <style type="text/css">
+        .pre {
+            font-family: monospace;
+        }
+        </style>
     <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -21,18 +26,19 @@
         <h1>TrollRAT</h1>
         <hr/>
         <div class="text">
-        <p><span class="bold">TrollRAT</span> is an open-source remote administration tool developed by <a href="https://www.youtube.com/c/leurak" target="_blank">Leurak</a>. It's designed to make the computer appear messed up while a scammer pretending to be a technician is connected to it remotely. For more info, check out the <a href="https://github.com/Leurak/TrollRAT" target="_blank">GitHub repository</a>. You can also look up "trollrat" on YouTube for various demonstration videos.</p>
+        <p><span class="bold">TrollRAT</span> is an open-source remote administration tool developed by <a href="https://www.youtube.com/c/leurak" target="_blank">Leurak</a>. It's designed to make the computer appear messed up while a scammer pretending to be a technician is connected to it remotely. For more info, check out the <a href="https://github.com/Leurak/TrollRAT" target="_blank">GitHub repository</a>. You can also look up &quot;trollrat&quot; on YouTube for various demonstration videos.</p>
         
         <h3><a href="https://mega.nz/#!yc1BXALK!XQC6SmZCfJnf_y9NyyrneCob3ko8Ww2whwsqQaFrrZE" target="_blank">Download TrollRAT</a></h3>
         <p>Please do not use it for malicious purposes.</p>
         
         <h3>How to set up TrollRAT:</h3>
+        TrollRAT only works on computers running Windows XP or newer.
         <ol>
         <li>Extract the files from TrollRAT.zip (they should be TrollRAT.exe and a Plugins folder) wherever you want, but make sure they're in the same folder.</li>
         <li>Run the TrollRAT executable. If it asks for administrative permissions, say yes.</li>
-        <li>Nothing should show up, it'll run in the background. To make sure it's running, check the "processes" section of Task Manager.</li>
-        <li>On another computer, or on your host machine if you ran TrollRAT on a virtual machine, open a web browser and visit the <span class="bold">local</span> IP address of the computer TrollRAT is running on, on port :1337.
-            <ul><li>E.G.: if TrollRAT is running on a machine with the local IP address <span class="towerofpisa">192.168.0.2</span>, type <span class="towerofpisa">192.168.0.2:1337</span> in your web browser.</li></ul>
+        <li>Nothing should show up, it'll run in the background. To make sure it's running, open Task Manager and check the &quot;processes&quot; section.</li>
+        <li>On another device (computer, tablet, or smartphone) connected to the same network as the computer TrollRAT is running on, or on your host machine if you ran TrollRAT in a virtual machine, open a web browser and visit the <span class="bold">local</span> IP address of the computer TrollRAT is running on, on port 1337.
+            <ul><li>E.G.: if TrollRAT is running on a machine with the local IP address <span class="pre">192.168.0.2</span>, type <span class="pre">192.168.0.2:1337</span> in your web browser.</li></ul>
         </li>
         <li>You're ready to have fun.</li>
         </ol>
@@ -52,15 +58,16 @@
         <h3>If you don't know your machine's local IP address:</h3>
         <ol>
         <li>Right click on the network icon on your taskbar's system tray.</li>
-        <li>Select "Open Network and Sharing Center".</li>
-        <li>On the right-hand side, where it says "Connections:" click on your connection (it could be called Local Area Connection, Ethernet, Wi-Fi, etc.)</li>
-        <li>Click "Details".</li>
-        <li>Note the "IPv4 Address" (or "IPv6 Address" if you use IPv6). That's your local IP address.</li>
+        <li>Select &quot;Open Network and Sharing Center&quot;.</li>
+        <li>On the right-hand side, where it says &quot;Connections:&quot; click on your connection (it could be called &quot;Local Area Connection&quot;, &quot;Ethernet&quot;, &quot;Wi-Fi&quot;, etc.)</li>
+        <li>Click &quot;Details&quot;.</li>
+        <li>Note the &quot;IPv4 Address&quot; (or &quot;IPv6 Address&quot; if you use IPv6). That's your local IP address.</li>
         </ol>
         
-        <p>If that doesn't work or you have Windows XP, open the Command Prompt, type "ipconfig" and press Enter. You'll see your local IPv4 or IPv6 address somewhere in there.</p>
-        <p>If you're sure you've got the right IP address of your virtual machine, but it doesn't work, change your VM's networking settings from "NAT" to "Bridged". It's not always required, but it will fix this problem if you have it.<br>
-        <span class="bold">Warning</span>: Switching the VM's networking to bridged will let the VM see other devices in your local network, as if the VM was connected to your router directly. If you have any servers or anything in your local network (e.g. NAS), make sure they're password protected or offline, and if the VM asks for a location of the network, choose "Public".</p>
+        <p>If that doesn't work or you have Windows XP, open the Command Prompt, type <span class="pre">ipconfig</span> and press Enter. You'll see your local IPv4 or IPv6 address somewhere in there.<br>
+           If you see many IP addresses but you're not sure which one is the right one, try all of them (excluding &quot;subnet mask&quot; and &quot;gateway&quot;).</p>
+        <p>If you're using a virtual machine and you're sure you've got the right IP address, but it doesn't work, change your VM's networking settings from &quot;NAT&quot; to &quot;Bridged&quot;. It's not always required, but it will fix this problem if you have it.<br>
+        <span class="bold">Warning</span>: Switching the VM's networking to bridged will let the VM see other devices in your local network, as if the VM was connected to your router directly. If you have any servers or anything in your local network (e.g. NAS), make sure they're password protected or offline, and if the VM asks for a location of the network, choose &quot;Public&quot;.</p>
         
         <p id="bottom">Guide written by <a href="https://www.youtube.com/thecomputerguy96" target="_blank">TheComputerGuy96</a>. <a href="/">Back to home page</a></p>
         </div>
