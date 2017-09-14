@@ -30,12 +30,12 @@
         
         <h3><a href="https://mega.nz/#!yc1BXALK!XQC6SmZCfJnf_y9NyyrneCob3ko8Ww2whwsqQaFrrZE" target="_blank">Download TrollRAT</a></h3>
         <p>Please do not use it for malicious purposes.</p>
+        <p>TrollRAT only works on computers running Microsoft Windows XP or newer (Vista, 7, 8, 10).</p>
         
         <h3>How to set up TrollRAT:</h3>
-        TrollRAT only works on computers running Windows XP or newer.
         <ol>
-        <li>Extract the files from TrollRAT.zip (they should be TrollRAT.exe and a Plugins folder) wherever you want, but make sure they're in the same folder.</li>
-        <li>Run the TrollRAT executable. If it asks for administrative permissions, say yes.</li>
+        <li>Extract the files from <span class="pre">TrollRAT.zip</span> (they should be <span class="pre">TrollRAT.exe</span> and a <span class="pre">Plugins</span> folder) wherever you want, but make sure they're in the same folder.</li>
+        <li>Run the TrollRAT executable. If you get a User Account Control prompt, say yes.</li>
         <li>Nothing should show up, it'll run in the background. To make sure it's running, open Task Manager and check the &quot;processes&quot; section.</li>
         <li>On another device (computer, tablet, or smartphone) connected to the same network as the computer TrollRAT is running on, or on your host machine if you ran TrollRAT in a virtual machine, open a web browser and visit the <span class="bold">local</span> IP address of the computer TrollRAT is running on, on port 1337.
             <ul><li>E.G.: if TrollRAT is running on a machine with the local IP address <span class="pre">192.168.0.2</span>, type <span class="pre">192.168.0.2:1337</span> in your web browser.</li></ul>
@@ -45,29 +45,22 @@
         
         <h3>How to quit TrollRAT (stop it from running in the background):</h3>
         <p>End its process from Task Manager, or restart your computer.</p>
-
-        <h3>If no plugins/payloads show up:</h3>
-        <ol>
-        <li>Quit TrollRAT from Task Manager.</li>
-        <li>Go to the folder where the TrollRAT files are.</li>
-        <li>Right click on TrollRAT.exe, click Properties, and then Unblock.</li>
-        <li>Repeat step 3 for the three files in the Plugins/TrollRATPayloads folder. If you don't see any files there, you downloaded a corrupt or incomplete copy of the program.</li>
-        <li>Run TrollRAT again.﻿</li>
-        </ol>
         
         <h3>If you don't know your machine's local IP address:</h3>
-        <ol>
-        <li>Right click on the network icon on your taskbar's system tray.</li>
-        <li>Select &quot;Open Network and Sharing Center&quot;.</li>
-        <li>On the right-hand side, where it says &quot;Connections:&quot; click on your connection (it could be called &quot;Local Area Connection&quot;, &quot;Ethernet&quot;, &quot;Wi-Fi&quot;, etc.)</li>
-        <li>Click &quot;Details&quot;.</li>
-        <li>Note the &quot;IPv4 Address&quot; (or &quot;IPv6 Address&quot; if you use IPv6). That's your local IP address.</li>
-        </ol>
+        <p>Open the Command Prompt, type <span class="pre">ipconfig</span> and press Enter. Note the &quot;IPv4 address&quot; (or &quot;IPv6 address&quot; if you use IPv6).</p>
+        <p>If you see many IP addresses but you're not sure which one is the right one, try all of them <span class="bold">(excluding &quot;subnet mask&quot; and &quot;gateway&quot;)</span>. See if you can scroll up and down in the Command Prompt window. <span class="bold">Don't forget to add <span class="pre">:1337</span> at the end.</span></p>
+        <p>If you're using a virtual machine and you're sure you've got the right IP address, but it still doesn't work, change your VM's networking settings from &quot;NAT&quot; to &quot;Bridged&quot;. It's not always required, but it will fix this problem if you have it.<br>
+        <span class="bold"><u>Warning</u></span>: Switching the VM's networking to bridged will let the VM see other devices in your local network, as if the VM was connected to your router directly. If you have any servers or anything in your local network (e.g. NAS), make sure they're password protected or offline, and if the VM asks for a location of the network, choose &quot;Public&quot;.</p>
         
-        <p>If that doesn't work or you have Windows XP, open the Command Prompt, type <span class="pre">ipconfig</span> and press Enter. You'll see your local IPv4 or IPv6 address somewhere in there.<br>
-           If you see many IP addresses but you're not sure which one is the right one, try all of them (excluding &quot;subnet mask&quot; and &quot;gateway&quot;).</p>
-        <p>If you're using a virtual machine and you're sure you've got the right IP address, but it doesn't work, change your VM's networking settings from &quot;NAT&quot; to &quot;Bridged&quot;. It's not always required, but it will fix this problem if you have it.<br>
-        <span class="bold">Warning</span>: Switching the VM's networking to bridged will let the VM see other devices in your local network, as if the VM was connected to your router directly. If you have any servers or anything in your local network (e.g. NAS), make sure they're password protected or offline, and if the VM asks for a location of the network, choose &quot;Public&quot;.</p>
+        <h3>If no plugins/payloads show up:</h3>
+        <ol>
+        <li>Quit <span class="pre">TrollRAT.exe</span> from Task Manager.</li>
+        <li>Go to the folder where the TrollRAT files are.</li>
+        <li>Right click on <span class="pre">TrollRAT.exe</span>, click Properties, then Unblock, then OK.</li>
+        <li>Open the <span class="pre">Plugins</span> folder, then open the <span class="pre">TrollRATPayloads</span> inside it. For each file in that folder, right-click on it, click Properties, then Unblock, then OK.
+        <ul><li>(By default, there should be three files in the <span class="pre">TrollRATPayloads</span> folder. If there are fewer files than that, or if you don't see the <span class="pre">Plugins</span> and/or <span class="pre">TrollRATPayloads</span> folder(s) at all, you downloaded a corrupt or incomplete copy of the program.)</li></ul></li>
+        <li>Run TrollRAT again.﻿</li>
+        </ol>
         
         <p id="bottom">Guide written by <a href="https://www.youtube.com/thecomputerguy96" target="_blank">TheComputerGuy96</a>. <a href="/">Back to home page</a></p>
         </div>
