@@ -55,6 +55,13 @@ ul {padding-right: 1em;}
     font-style: normal;
 }
 
+@media screen and (max-width: 800px) {
+    body {
+        left: 0;
+        right: 0;
+    }
+}
+
 @media screen and (max-width: 1024px) {
 	h1 {
 		font-size: 24pt;
