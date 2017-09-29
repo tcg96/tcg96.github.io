@@ -51,8 +51,12 @@ ul {padding-right: 1em;}
 }
 
 #bottom {
-    margin-top: 3em;
-    font-style: normal;
+	margin-top: 3em;
+	font-style: normal;
+}
+
+.pre {
+	font-family: monospace;
 }
 
 @media screen and (max-width: 800px) {
