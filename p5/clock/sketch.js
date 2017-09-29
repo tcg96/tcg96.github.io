@@ -5,16 +5,12 @@
 // Clock
 // Video: https://youtu.be/E4RyStef-gY
 
-let secondhand = 0;
-
 function setup() {
    createCanvas(400, 400);
    angleMode(DEGREES);
  }
 
  function draw() {
-   let fps = frameRate();
-   console.log(fps);
    background(0);
    translate(width/2, height/2);
    rotate(-90);
@@ -22,13 +18,11 @@ function setup() {
    let h = hour();
    let m = minute();
    let s = second();
-   secondhand++;
-   if (secondhand >= fps) secondhand = 0;
 
    strokeWeight(8);
    stroke(255, 100, 150);
    noFill();
-   let secondAngle = map(s, 0, 60, 0, 360) + map(secondhand, 0, fps, 0, 6);
+   let secondAngle = map(s, 0, 60, 0, 360);
    arc(0, 0, 300, 300, 0, secondAngle);
 
    stroke(150, 100, 255);
