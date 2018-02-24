@@ -1,0 +1,63 @@
+<html>
+    <head>
+    <title>Staircase text</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,100,700" rel="stylesheet" type="text/css">
+    <link href="style.css" rel="stylesheet" type="text/css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-85225251-1', 'auto');
+  ga('send', 'pageview');
+
+    </script>
+    <style type="text/css">
+    #stairs {
+        font-family: monospace;
+        font-size: 18pt;
+        padding: 1em;
+    }
+    </style>
+    <script type="text/javascript">
+    function DoStairs(text, goodbye) {
+        document.getElementById("disclaimer").innerHTML = "";
+        let result = document.getElementById("stairs");
+        result.innerHTML = ""; // clear the results area
+        document.getElementById("textbox").value = ""; // clear the text box
+        
+        // Begin writing the word staircase
+        for (let i = 0; i < text.length; i++) {
+            for (let j = 0; j < i; j++) {
+                result.innerHTML += "&nbsp;"; // add more and more spaces for every letter
+            }
+            result.innerHTML += text.charAt(i).toUpperCase() + "<br>"; // add the i-th character after i spaces, then go to the next line
+        }
+        
+        if (goodbye) {
+            // Write Goodbye like a Ouija board
+            for (let i = 0; i < text.length; i++) {
+                result.innerHTML += "&nbsp;"; // for the last set of spaces, add as many spaces as the characters in the input
+            }
+            result.innerHTML += "Goodbye";
+        }
+    }
+    </script>
+    </head>
+    
+    <body>
+    <form action="javascript:DoStairs(document.getElementById('textbox').value);">
+        <input type="text" id="textbox"/>
+        <input type="submit" value="GO"/>
+        <input type="button" value="GOODBYE" onclick="javascript:DoStairs(document.getElementById('textbox').value, true)";/>
+    </form>
+    <div id="stairs">
+        <!-- The end result will show up here -->
+    </div>
+    <span id="disclaimer">
+        This page was inspired by comment chains like <a href="https://www.reddit.com/r/AskOuija/comments/5agza8/spirits_where_does_my_grandmother_go_when_she/" target="_blank">this one</a>.
+    </span>
+    </body>
+</html>
