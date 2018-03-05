@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>ThinkPad&nbsp;T60 Snow Leopard</title>
+		<link href="https://fonts.googleapis.com/css?family=Roboto:400,300,100,700" rel="stylesheet" type="text/css">
+        <link href="../style.css" rel="stylesheet" type="text/css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-85225251-1', 'auto');
+  ga('send', 'pageview');
+
+    </script>
+    </head>
+    <body>
+        <div class="thecomputerguyninetysix">
+        <h1>Mac&nbsp;OS&nbsp;X Snow&nbsp;Leopard on ThinkPad&nbsp;T60</h1>
+        <hr/>
+        <div>
+        <p>The files provided here have been tested on an IBM/Lenovo ThinkPad&nbsp;T60 computer, type&nbsp;2008, with Intel Core&nbsp;2&nbsp;Duo (64-bit) and ATI Mobility Radeon X1300 64&nbsp;MB graphics (device&nbsp;ID 0x7149) running Mac&nbsp;OS&nbsp;X 10.6.8 Snow&nbsp;Leopard. They may work with other hardware configurations, but I haven't tried them.</p>
+        <p>First, a list of things that I have <span class="bold">NOT</span> been able to get working.
+        <ul>
+        <li>Sleep mode</li>
+        <li>Internal wi-fi (Intel PRO/Wireless 3945ABG)</li>
+        <li>Fingerprint reader</li>
+        <li>Screen resolutions different than 1024*768</li>
+        </ul>
+        I have no interest in trying Snow Leopard on this computer again. But <a href="https://youtu.be/AkCR5lDAO0M" target="_blank">you can watch this video</a> recorded in January 2018 about installing Snow Leopard and dual booting it with Windows&nbsp;XP.</p>
+        
+        <h3>Video acceleration (AKA QE/CI, Quartz&nbsp;Extreme/Core&nbsp;Image)</h3>
+        <p>I was able to patch the kext (= kernel&nbsp;extension) files for the ATI&nbsp;X1300 mobile graphics. All the files I found online were for different device IDs than mine, so I had to use a hex editor to patch the files myself. Just in case there's another person in the world who wants to get the video drivers working, I'm going to provide the file: <a href="ATI Mobility Radeon X1300 (device ID 7149) for 10.6.8.zip">ATI Mobility Radeon X1300 (device&nbsp;ID 7149) for 10.6.8</a>. Extract it and install all those files (even the <code>.bundle</code> and <code>.plugin</code> files) using something like <a href="Kext Utility.app.zip">Kext Utility</a>.<p>
+        <figure>
+        <a href="Screen shot 2018-01-19 at 12.30.11 PM.png"><img src="Screen shot 2018-01-19 at 12.30.11 PM.png" width="50%" height="50%" alt="Screen shot of DVD Player on Mac OS X 10.6.8 on ThinkPad T60 showing that all video acceleration features are supported"/></a>
+        <figcaption>Every video acceleration feature works. The resolution is stuck at 1024*768, but my T60 has that very display resolution</figcaption>
+        </figure>
+        
+        <h3>UltraNav with scrolling</h3>
+        <p>Here is also a driver for the UltraNav (combination touchpad and TrackPoint, including scrolling with the TrackPoint): <a href="ThinkPad T60 UltraNav for 10.6.8.zip">ThinkPad&nbsp;T60 UltraNav for 10.6.8</a>.<br>
+        I did not write or patch this. It's an edited version of the Voodoo PS2 Controller kext file I found on <a href="https://forum.thinkpads.com/viewtopic.php?t=86059" target="_blank">this forum post</a> (or maybe it was another one, I did so much googling I don't remember exactly). I'm re-hosting it here in case it goes away.<br>
+        Everything works fine, but the two pointing devices are always enabled and there doesn't seem to be a way to disable one of them (I always use the TrackPoint, I don't like the tiny touchpad).</p>
+        
+        <h3>How to install <code>.kext</code> files (or remove them, even if you get a kernel panic)</h3>
+        <p>Use <a href="Kext Utility.app.zip">Kext Utility</a> to install them. That program will copy your kext files to the folder /System/Library/Extensions and apply the right permissions. Put your password when it asks to and restart your computer to see if it worked or not.
+        </p>
+        <p>If your kext file(s) didn't work, go to the folder /System/Library/Extensions and delete the files you installed (don't touch anything else).</p>
+        <p>If your computer doesn't boot up at all, you can still delete them: boot up in single user mode ("-s" option in the boot loader) and then type in: <br><code>rm -rf /System/Library/Extensions/FILE.kext</code><br>
+        Replace FILE with your kext file's name. Then press Enter.<br>
+        If you have more files, repeat this for every file you want to delete (you can press the up arrow key to avoid typing the same command over and over).
+        <br>Then type "reboot" and press Enter again.</p>
+
+        <h3>Dual boot</h3>
+        <p>And in case you want to dual boot with Windows, you're going to want to re-install the boot loader to boot back into Mac OS. For this T60, I found that <a href="Chameleon RC5.pkg">Chameleon&nbsp;RC5</a> works the best. Other boot loaders should be fine, but I haven't tested them.<br>
+        Boot from your Hackintosh install&nbsp;DVD, choose your Mac&nbsp;OS partition (not the install&nbsp;DVD), then install Chameleon on your hard drive.</p>
+        
+		<p><br><hr>Thank you for visiting.</p>
+        <p id="bottom">Last updated on Mar 5, 2018</p>
+        </div>
+        </div>
+    </body>
+</html>
