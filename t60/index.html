@@ -33,22 +33,26 @@
         I have no interest in trying Snow Leopard on this computer again. But <a href="https://youtu.be/AkCR5lDAO0M" target="_blank">you can watch this video</a> recorded in January 2018 about installing Snow Leopard and dual booting it with Windows&nbsp;XP.</p>
         
         <h3>Video acceleration (AKA QE/CI, Quartz&nbsp;Extreme/Core&nbsp;Image)</h3>
-        <p>I was able to patch the kext (= kernel&nbsp;extension) files for the ATI&nbsp;X1300 mobile graphics. All the files I found online were for different device IDs than mine, so I had to use a hex editor to patch the files myself. Just in case there's another person in the world who wants to get the video drivers working, I'm going to provide the file: <a href="ATI Mobility Radeon X1300 (device ID 7149) for 10.6.8.zip">ATI Mobility Radeon X1300 (device&nbsp;ID 7149) for 10.6.8</a>. Extract it and install all those files (even the <code>.bundle</code> and <code>.plugin</code> files) using something like <a href="Kext Utility.app.zip">Kext Utility</a>.<p>
+        <p>I was able to patch the kext (= kernel&nbsp;extension) files for the ATI&nbsp;X1300 mobile graphics. All the files I found online were for different device IDs than mine, so I had to use a hex editor to patch the files myself. Just in case there's another person in the world who wants to get the video drivers working, I'm going to provide the file: <a href="ATI Mobility Radeon X1300 (device ID 7149) for 10.6.8.zip">ATI Mobility Radeon X1300 (device&nbsp;ID 7149) for 10.6.8</a>. Extract it and install all those files (even the <code>.bundle</code> and <code>.plugin</code> files) using something like <a href="http://cvad-mac.narod.ru/index/0-4" target="_blank">Kext Utility</a>.<p>
         <figure>
         <a href="Screen shot 2018-01-19 at 12.30.11 PM.png"><img src="Screen shot 2018-01-19 at 12.30.11 PM.png" width="50%" height="50%" alt="Screen shot of DVD Player on Mac OS X 10.6.8 on ThinkPad T60 showing that all video acceleration features are supported"/></a>
         <figcaption>Every video acceleration feature works. The resolution is stuck at 1024*768, but my T60 has that very display resolution</figcaption>
         </figure>
+        <p><span class="bold">Bug</span>: when switching to full-screen mode in some applications and then exiting, the mouse cursor may turn into a horizontal line of garbage that spans across the entire screen, so you know where it is on the Y axis of your screen (from top to bottom), but not on the X axis (from left to right).<br>
+        The only workaround I know is rebooting: put your mouse all the way to the top left corner, click to open the Apple menu, then use the arrow keys and the Enter key to select the Restart option.</p>
         
         <h3>UltraNav with scrolling</h3>
         <p>Here is also a driver for the UltraNav (combination touchpad and TrackPoint, including scrolling with the TrackPoint): <a href="ThinkPad T60 UltraNav for 10.6.8.zip">ThinkPad&nbsp;T60 UltraNav for 10.6.8</a>.<br>
         I did not write or patch this. It's an edited version of the Voodoo PS2 Controller kext file I found on <a href="https://forum.thinkpads.com/viewtopic.php?t=86059" target="_blank">this forum post</a> (or maybe it was another one, I did so much googling I don't remember exactly). I'm re-hosting it here in case it goes away.<br>
         Everything works fine, but the two pointing devices are always enabled and there doesn't seem to be a way to disable one of them (I always use the TrackPoint, I don't like the tiny touchpad).</p>
         
-        <h3>How to install <code>.kext</code> files (or remove them, even if you get a kernel panic)</h3>
-        <p>Use <a href="Kext Utility.app.zip">Kext Utility</a> to install them. That program will copy your kext files to the folder /System/Library/Extensions and apply the right permissions. Put your password when it asks to and restart your computer to see if it worked or not.
+        <h3>How to install <code>.kext</code> files</h3>
+        <p>Use <a href="http://cvad-mac.narod.ru/index/0-4" target="_blank">Kext Utility</a>. That program will copy your kext files to the folder /System/Library/Extensions and apply the right file permissions. Put your password when it asks to and restart your computer to see if it worked or not.
         </p>
+        
+        <h3>How to remove <code>.kext</code> files (even when Mac&nbsp;OS no longer starts up)</h3>
         <p>If your kext file(s) didn't work, go to the folder /System/Library/Extensions and delete the files you installed (don't touch anything else).</p>
-        <p>If your computer doesn't boot up at all, you can still delete them: boot up in single user mode ("-s" option in the boot loader) and then type in: <br><code>rm -rf /System/Library/Extensions/FILE.kext</code><br>
+        <p>If your computer doesn't boot up at all (you get a kernel&nbsp;panic), you can still delete them: boot up in single user mode ("-s" option in the boot loader) and then type in: <br><code>rm -rf /System/Library/Extensions/FILE.kext</code><br>
         Replace FILE with your kext file's name. Then press Enter.<br>
         If you have more files, repeat this for every file you want to delete (you can press the up arrow key to avoid typing the same command over and over).
         <br>Then type "reboot" and press Enter again.</p>
@@ -58,7 +62,7 @@
         Boot from your Hackintosh install&nbsp;DVD, choose your Mac&nbsp;OS partition (not the install&nbsp;DVD), then install Chameleon on your hard drive.</p>
         
 		<p><br><hr>Thank you for visiting.</p>
-        <p id="bottom">Last updated on Mar 5, 2018</p>
+        <p id="bottom">Last updated on Mar 7, 2018</p>
         </div>
         </div>
     </body>
