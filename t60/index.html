@@ -30,12 +30,12 @@
         <li>Fingerprint reader</li>
         <li>Screen resolutions different than 1024*768</li>
         </ul>
-        I have no interest in trying Snow Leopard on this computer again. But <a href="https://youtu.be/AkCR5lDAO0M" target="_blank">you can watch this video</a> recorded in January 2018 about installing Snow Leopard and dual booting it with Windows&nbsp;XP.</p>
+        I have no interest in trying Snow Leopard on this computer again, but <a href="https://youtu.be/AkCR5lDAO0M" target="_blank">you can watch this video</a> recorded in January 2018 about installing Snow Leopard and dual booting it with Windows&nbsp;XP.</p>
         
         <h3>Video acceleration (AKA QE/CI, Quartz&nbsp;Extreme/Core&nbsp;Image)</h3>
         <p>I was able to patch the kext (= kernel&nbsp;extension) files for the ATI&nbsp;X1300 mobile graphics. All the files I found online were for different device IDs than mine, so I had to use a hex editor to patch the files myself. Just in case there's another person in the world who wants to get the video drivers working, I'm going to provide the file: <a href="ATI Mobility Radeon X1300 (device ID 7149) for 10.6.8.zip">ATI Mobility Radeon X1300 (device&nbsp;ID 7149) for 10.6.8</a>. Extract it and install all those files (even the <code>.bundle</code> and <code>.plugin</code> files) using something like <a href="http://cvad-mac.narod.ru/index/0-4" target="_blank">Kext Utility</a>.<p>
         <figure>
-        <a href="Screen shot 2018-01-19 at 12.30.11 PM.png"><img src="Screen shot 2018-01-19 at 12.30.11 PM.png" width="50%" height="50%" alt="Screen shot of DVD Player on Mac OS X 10.6.8 on ThinkPad T60 showing that all video acceleration features are supported"/></a>
+        <a href="Screen shot 2018-01-19 at 12.30.11 PM.png"><img src="Screen shot 2018-01-19 at 12.30.11 PM.png" width="50%" height="50%" alt="Screen shot of DVD Player on Mac OS X 10.6.8 showing that all video acceleration features are supported. The area of the program that shows the video has been automatically censored by the Mac screen shot program (it just shows a gray and white checkerboard pattern). The inserted DVD has the label &quot;BEE_MOVIE&quot;"/></a>
         <figcaption>Every video acceleration feature works. The resolution is stuck at 1024*768, but my T60 has that very display resolution</figcaption>
         </figure>
         <p><span class="bold">Bug</span>: when switching to full-screen mode in some applications and then exiting, the mouse cursor may turn into a horizontal line of garbage that spans across the entire screen, so you know where it is on the Y axis of your screen (from top to bottom), but not on the X axis (from left to right).<br>
@@ -51,7 +51,8 @@
         </p>
         
         <h3>How to remove <code>.kext</code> files (even when Mac&nbsp;OS no longer starts up)</h3>
-        <p>If your kext file(s) didn't work, go to the folder /System/Library/Extensions and delete the files you installed (don't touch anything else).</p>
+        <p>If your kext file(s) didn't work, go to the folder /System/Library/Extensions and delete the files you installed (don't touch anything else).
+        <br>(Tip: if you sort the files in that folder by modified, the ones you added will be among the most recent ones, so you can find them more easily)</p>
         <p>If your computer doesn't boot up at all (you get a kernel&nbsp;panic), you can still delete them: boot up in single user mode ("-s" option in the boot loader) and then type in: <br><code>rm -rf /System/Library/Extensions/FILE.kext</code><br>
         Replace FILE with your kext file's name. Then press Enter.<br>
         If you have more files, repeat this for every file you want to delete (you can press the up arrow key to avoid typing the same command over and over).
@@ -62,7 +63,7 @@
         Boot from your Hackintosh install&nbsp;DVD, choose your Mac&nbsp;OS partition (not the install&nbsp;DVD), then install Chameleon on your hard drive.</p>
         
 		<p><br><hr>Thank you for visiting.</p>
-        <p id="bottom">Last updated on Mar 7, 2018</p>
+        <p id="bottom">Last updated on May 16, 2018</p>
         </div>
         </div>
     </body>
