@@ -33,7 +33,7 @@
             for (let j = 0; j < i; j++) {
                 result.innerHTML += "&nbsp;"; // add more and more spaces for every letter
             }
-            result.innerHTML += text.charAt(i).toUpperCase() + "<br>"; // add the i-th character after i spaces, then go to the next line
+            result.innerHTML += text.charAt(i).toUpperCase() + "<br>"; // add the uppercase i-th character after i spaces, then go to the next line
         }
         
         if (goodbye) {
@@ -51,7 +51,7 @@
     <form action="javascript:DoStairs(document.getElementById('textbox').value);">
         <input type="text" id="textbox"/>
         <input type="submit" value="GO"/>
-        <input type="button" value="GOODBYE" onclick="javascript:DoStairs(document.getElementById('textbox').value, true)";/>
+        <input type="button" value="GOODBYE" onclick="javascript:DoStairs(document.getElementById('textbox').value, true);"/>
     </form>
     <div id="stairs">
         <!-- The end result will show up here -->
