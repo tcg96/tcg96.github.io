@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <title>Guru Reset for HTC One M7 (International)</title>
+        <title>Download Guru Reset to Re-Install Original Software on HTC One M7</title>
         <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css?family=Roboto:400,300,100,700" rel="stylesheet" type="text/css">
         <link href="style.css" rel="stylesheet" type="text/css">
@@ -20,18 +20,18 @@
     </head>
     <body>
         <div class="thecomputerguyninetysix">
-        <h1>Guru&nbsp;Reset for HTC One M7</h1>
+        <h1>How to re-install the original stock software on your HTC One M7 (using Guru&nbsp;Reset)</h1>
         <hr/>
         <div class="text">
-        <p>If you reached this page, you probably already know what a Guru&nbsp;Reset is. If not:<br>The Guru&nbsp;Reset for the HTC One is an unofficial ZIP file (from <a href="https://forum.xda-developers.com/showthread.php?t=2471869" target="_blank">crushalot on the XDA-Developers forums</a>) that is installed like a custom ROM (custom version of Android) using a custom recovery program on your phone (like TWRP), but it installs the official unmodified software that came with your phone from the factory (Android with HTC&nbsp;Sense).</p>
-        <h2>This page assumes that your HTC One M7 already has an unlocked boot loader and a custom recovery (TWRP 2.7.1.1 works best in this case), and that you have experience with flashing ZIP files to install custom ROMs.<br><br><u>If you've never unlocked your phone's boot loader, this page is not for you</u>. If you want to restore your phone normally, just go to Settings, Backup&nbsp;&amp;&nbsp;reset, then Reset&nbsp;phone. If your phone doesn't boot up properly, look up &quot;factory reset htc one m7&quot;. <u>Ignore the rest of this page</u>.</h2>
+        <p>If you reached this page, you probably already know what a Guru&nbsp;Reset is. If not:<br>The Guru&nbsp;Reset is an unofficial ZIP file (from <a href="https://forum.xda-developers.com/showthread.php?t=2471869" target="_blank">crushalot on the XDA-Developers forums</a>) that is installed like a custom ROM (custom version of Android) using a custom recovery program (like TWRP) on your HTC One M7, but it installs the official unmodified software that came with your phone from the factory (Android with HTC&nbsp;Sense).</p>
+        <h2>This page assumes that your HTC One M7 already has an unlocked boot loader and a custom recovery (TWRP 2.7.1.1 works best in this case), and that you have experience with flashing ZIP files to install custom ROMs.<br><br><u>If you've never unlocked your phone's boot loader, this page is not for you</u>. If you want to restore your phone, just go to Settings, Backup&nbsp;&amp;&nbsp;reset, then Reset&nbsp;phone. If your phone doesn't boot up properly, look up &quot;factory reset htc one m7&quot;. <u>Ignore the rest of this page</u>.</h2>
         <p><br>The advantage of using Guru&nbsp;Reset over the official RUU (ROM Update Utility) program is that the Guru&nbsp;Reset will <strong>not</strong> erase the virtual SD card directory (where your photos, downloads, music, etc... files are stored, because this phone doesn't have an SD card slot), and it works if you have S-ON (security on).
         <p>If you want to completely wipe your phone (including the virtual SD card) and go back to the original software, you must have S-OFF (security off) and <a href="http://www.androidruu.com/?developer=M7" target="_blank">use an RUU</a> on your computer. (If you've never unlocked your boot loader, you won't have S-OFF. I told you to ignore the rest of this page).</p>
         <p>crushalot's web site, <code>htc1guru.com</code>, used to have a variety of these Guru&nbsp;Reset files and helpful guides (the guides are still available on the XDA-Developers forums). I have S-OFF on my HTC One M7, but I wanted to re-install the original software without wiping the virtual SD card, so I downloaded this Guru&nbsp;Reset from that web site.
-        <p>In 2018 I discovered that the htc1guru website no longer exists, but I still have the file that I downloaded a few years ago, so I re-uploaded it because I couldn't find anyone else who has.</p>
+        <p>In 2018 I discovered that the htc1guru website no longer exists, but I still have the file that I downloaded a few years ago, so I re-uploaded it because I couldn't find anyone else who has, and then I had the idea to write this help page along with it.</p>
         
         <h2>What phones does it work for?</h2>
-        <p>The Guru&nbsp;Reset file I still have <strong>only</strong> works for the international (unlocked) HTC One M7 variant.<br>Your One M7's model number (look at the back of your phone) must be <code>PN07100</code> and its CID (carrier ID) must be one of the following (to check, turn on your phone while holding the down volume button, and look where it says &quot;CID&quot; on the top left corner):</p>
+        <p>The Guru&nbsp;Reset file I re-uploaded <strong>only</strong> works for the international (unlocked) HTC One M7 variant.<br>Your One M7's model number (look at the back of your phone) must be <code>PN07100</code> and its CID (carrier ID) must be one of the following (to check, turn on your phone while holding the down volume button, and look where it says &quot;CID&quot; on the top left corner):</p>
         <ul>
         <li><code>HTC__001</code>
         <li><code>HTC__016</code>
@@ -51,9 +51,9 @@
         <figcaption>The HTC One M7 boot loader (when you hold down the volume down button while turning on) should look like this (click on the image for full size).<br>For example, my phone's CID is <code>HTC__102</code>.</figcaption>
         </figure>
         
-        <h2>Is this the best way to get the original software?</h2>
+        <h2 id="ar">Is this the best way to get the original software?</h2>
         <p>No, the best way is to use an RUU (which will delete everything from your phone, including the virtual SD card). The Guru Reset is the second best way if you want the original unmodified software or have S-ON.</p>
-        <p>However, you might want to consider installing the <a href="https://android-revolution-hd.blogspot.com/p/android-revolution-hd-mirror-site-var.html" target="_blank">Android Revolution</a> custom ROM instead. It's just like the original software, except for some extra modifications that can be ignored, it won't replace your custom recovery, and it installs the latest software right away (the Guru&nbsp;Reset will need a lot of extra updates instead).<br>The author of Android Revolution, mike1986, also has &quot;system dumps&quot; for newer versions of the original unmodified software, which may be like the Guru&nbsp;Reset (but I've never tried them).</p>
+        <p>However, you might want to consider installing the <a href="https://android-revolution-hd.blogspot.com/p/android-revolution-hd-mirror-site-var.html" target="_blank">Android Revolution</a> custom ROM instead. It's just like the original software, except for some extra modifications that can be ignored, it won't replace your custom recovery, and it installs the latest software right away (the Guru&nbsp;Reset will need a lot of extra updates instead).<br>The author of Android Revolution, mike1986, also has &quot;<a href="https://www.androidfilehost.com/?w=files&flid=12822" target="_blank">system dumps</a>&quot; for newer versions of the original unmodified software, which may be like the Guru&nbsp;Reset (but I've never tried them).</p>
 
         <h2><a href="https://mega.nz/#!iUNFUAjD!SSkr38oDLFgf5Uf9fpMYnVgjP1N7bol3sAgIHmqY9FA">Download Guru&nbsp;Reset 2.24.401.1</a> (MD5&nbsp;hash: <code>a5e4b3f512a6aa6b9acf2e9a4b6ee995</code>)</h2>
         <p><br>If you care about the contents of your phone (OS, settings, apps, app data) before the installation, make a backup with your custom recovery (nandroid backup).</p>
@@ -87,15 +87,15 @@
         <li>Android 5.0.2 with HTC Sense 6.0 (software number: <code>7.19.401.51</code>) (final update)</li>
         </ol>
         <p>All updates for the international HTC One have <code>401</code> as the third number.</p>
-        <p>On my phone, I didn't have to re-lock the boot loader to install updates, but maybe you have to if you have S-ON, I don't know. To re-lock the boot loader, enter Fastboot mode and type in: <code>fastboot oem lock</code> or, if it doesn't work, <code>fastboot oem relock</code>.</p>
-        <p>After updating to the version you want, you can re-install your custom recovery (like TWRP, even the latest version) and gain root access with an app like Magisk or SuperSU, if you like.</p>
+        <p>On my phone, I didn't have to re-lock the boot loader to install updates, but maybe you have to if you have S-ON, I don't know.<br>To re-lock the boot loader, enter Fastboot mode and type in: <code>fastboot oem lock</code> or, if it doesn't work, <code>fastboot oem relock</code>.</p>
+        <p>After updating to the version you want, you can re-install your custom recovery (like TWRP, even the latest version) and gain root access with Magisk or SuperSU, if you like.</p>
         
         <h2>I have another problem.</h2>
-        <p>Unfortunately I can't help you. For more info, see the <a href="https://forum.xda-developers.com/showthread.php?t=2471869" target="_blank">forum thread on XDA-Developers</a>.</p>
+        <p>Unfortunately I can't help you. For more info, see the <a href="https://forum.xda-developers.com/showthread.php?t=2471869" target="_blank">forum thread on XDA-Developers</a> or <a href="#ar">try Android Revolution</a>.</p>
         
         
 		<p><br/>Thank you for visiting.</p>
-        <p id="bottom">Last updated on Nov 4, 2018</p>
+        <p id="bottom">Last updated on Nov 5, 2018</p>
         </div>
         </div>
     </body>
