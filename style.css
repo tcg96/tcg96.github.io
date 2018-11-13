@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css?family=IBM+Plex+Sans|IBM+Plex+Mono");
+
 body {
     margin-top: 1em;
     position: absolute;
@@ -6,9 +8,9 @@ body {
     padding: 0.5em;
     border: 1px solid;
     border-color: rgba(75, 75, 75, 1.00);
-    background-color: rgba(39, 39, 39, 1.00);
+    background-color: #111111;
     color: rgba(222, 222, 222, 1.00);
-    font-family: Roboto, Calibri, Helvetica, Arial, sans-serif;
+    font-family: "IBM Plex Sans", Roboto, Calibri, Helvetica, Arial, sans-serif;
 }
 
 a {
@@ -20,19 +22,20 @@ a:visited {
 }
 
 .thecomputerguyninetysix {
-    background-color: rgba(51, 51, 51, 1.00);
+    background-color: #222222;
     margin: -0.5em;
     padding: 0.5em;
 }
 
 h1 {
     font-size: 36pt;
+    line-height: 1em;
 }
 
 h2, h3 {
     padding-top: 21px;
     font-size: 15pt;
-    line-height: 1em;
+    line-height: 1.5em;
     text-align: left;
 }
 
@@ -43,6 +46,7 @@ hr {
 .text {
     text-align: justify;
     font-size: 12pt;
+    line-height: 1.5em;
 }
 
 ul {
@@ -63,8 +67,8 @@ ul {
 
 #bottom, figcaption {
     font-size: 9pt;
-    font-style: oblique;
-    /* color: dimgray; */
+    /* font-style: oblique;
+    color: dimgray; */
     text-align: left;
 }
 
@@ -73,12 +77,17 @@ ul {
     font-style: normal;
 }
 
-.pre {
-    font-family: monospace;
+.pre, pre, code {
+    font-family: "IBM Plex Mono", monospace;
 }
 
 nav ul li {
     padding: .5em;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
 }
 
 @media screen and (max-width: 800px) {
