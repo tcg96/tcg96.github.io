@@ -19,7 +19,7 @@
 function go(first, second) {
     if (first && second && first*1 == first && second*1 == second) {
     // First, check that the variables exist.
-    // Then, multiplicate them by one to convert them from strings to numbers, and compare them to the original variables, which are still strings.
+    // Then, multiply them by one to convert them from strings to numbers, and compare them to the original variables, which are still strings.
     // If they're actual numbers, the comparison with type conversion (two equals signs instead of three) will say true (one is a number and the other is a string, but one of them can be converted, so they can be compared).
     // If numbers were not entered, the "*1" will convert one side to "NaN" (not a number) and make the comparison say false.
         document.getElementById("weight").innerHTML = "Weighted Average of " + first + " and " + second + ": <span class='highlight'>" + Math.round((first*6 + second*3)/9) + "</span>";

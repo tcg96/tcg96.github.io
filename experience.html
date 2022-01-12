@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="UTF-8">
+    <title>Experience</title>
+    <link href="style.css" rel="stylesheet" type="text/css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-85225251-1', 'auto');
+  ga('send', 'pageview');
+    </script>   
+    
+    <script type="text/javascript">
+    function experience() {
+        var pearls = document.getElementById('pearls').value;
+        var itemlowercase = pearls.toLowerCase();
+        var itemUppercase = itemlowercase.charAt(0).toUpperCase() + itemlowercase.slice(1); // In PHP it's simply ucfirst($itemlowercase)
+        window.document.title = "Experience " + itemUppercase + " Lyrics";
+        
+        document.getElementById("lyrics").innerHTML = 
+        "<hr><h1>" +
+        (itemlowercase == "pearls" ? "<a href='https://www.youtube.com/watch?v=oXKCEbb-Y5g' target='_blank'>Experience Pearls</a>" : "Experience " + itemUppercase) +
+        "</h1>" +
+        "<p>Give me all your tears&nbsp;&nbsp;&nbsp;<br>" + // The nbsps are in case you want to copy and paste to Reddit
+        "Let me turn them to " + itemlowercase + "</p>" +
+
+        "<p>Let me turn all the tears&nbsp;&nbsp;&nbsp;<br>" +
+        "that you have cried into " + itemlowercase + "&nbsp;&nbsp;&nbsp;<br>" +
+        "Hand them over to me  &nbsp;&nbsp;&nbsp;<br>" +
+        "I'm gonna keep, keep them for you  &nbsp;&nbsp;&nbsp;<br>" +
+        "I want to hold you, I want to kiss you &nbsp;&nbsp;&nbsp;<br>" +
+        "I want to mend what is broken  &nbsp;&nbsp;&nbsp;<br>" +
+        "Love me the way that you loved her, please  &nbsp;&nbsp;&nbsp;<br>" +
+        "'cause now I'm giving it all</p>" +
+
+        "<p>And so I've made up my mind &nbsp;&nbsp;&nbsp;<br>" +
+        "I'm gonna be yours this time  &nbsp;&nbsp;&nbsp;<br>" +
+        "I'm gonna give all I've got &nbsp;&nbsp;&nbsp;<br>" +
+        "and get your love in return  &nbsp;&nbsp;&nbsp;<br>" +
+        "And so I've made up my mind &nbsp;&nbsp;&nbsp;<br>" +
+        "I'm gonna be yours this time  &nbsp;&nbsp;&nbsp;<br>" +
+        "I'm gonna teach you to trust &nbsp;&nbsp;&nbsp;<br>" +
+        "and learn how to burn  &nbsp;&nbsp;&nbsp;<br>" +
+        "experience " + itemlowercase + " (" + itemlowercase + " of experience)  </p>" +
+
+        "<p>Sand strikes up in your eyes  &nbsp;&nbsp;&nbsp;<br>" +
+        "I will cover your face &nbsp;&nbsp;&nbsp;<br>" +
+        "(Cover your face)  &nbsp;&nbsp;&nbsp;<br>" +
+        "I'll plant your desert with roses  &nbsp;&nbsp;&nbsp;<br>" +
+        "and I'm gonna keep, keep them for you  </p>" +
+
+        "<p>And so I've made up my mind &nbsp;&nbsp;&nbsp;<br>" +
+        "I'm gonna be yours this time  &nbsp;&nbsp;&nbsp;<br>" +
+        "I'm gonna give all I've got &nbsp;&nbsp;&nbsp;<br>" +
+        "and get your love in return  &nbsp;&nbsp;&nbsp;<br>" +
+        "And so I've made up my mind &nbsp;&nbsp;&nbsp;<br>" +
+        "I'm gonna be yours this time  &nbsp;&nbsp;&nbsp;<br>" +
+        "I'm gonna teach you to trust &nbsp;&nbsp;&nbsp;<br>" +
+        "and learn how to burn  &nbsp;&nbsp;&nbsp;<br>" +
+        "experience " + itemlowercase + "  </p>" +
+
+        "<p>I'll wear your " + itemlowercase + " more precious than silver  &nbsp;&nbsp;&nbsp;<br>" +
+        "I'll wear your " + itemlowercase + " so close to my skin  &nbsp;&nbsp;&nbsp;<br>" +
+        "I'll tear myself apart just to get you  &nbsp;&nbsp;&nbsp;<br>" +
+        "(I'll tear myself apart just to get you)  </p>" +
+
+        "<p>And so I've made up my mind</p>" +
+
+        "<p>And so I've made up my mind &nbsp;&nbsp;&nbsp;<br>" +
+        "I'm gonna be yours this time  &nbsp;&nbsp;&nbsp;<br>" +
+        "I'm gonna give all I've got &nbsp;&nbsp;&nbsp;<br>" +
+        "and get your love in return  &nbsp;&nbsp;&nbsp;<br>" +
+        "And so I've made up my mind &nbsp;&nbsp;&nbsp;<br>" +
+        "I'm gonna be yours this time  &nbsp;&nbsp;&nbsp;<br>" +
+        "I'm gonna teach you to trust &nbsp;&nbsp;&nbsp;<br>" +
+        "and learn how to burn  &nbsp;&nbsp;&nbsp;<br>" +
+        "experience " + itemlowercase + " (" + itemlowercase + " of experience)  </p>" +
+
+        "<p>Experience " + itemlowercase + " (" + itemUppercase + " of experience)</p>";
+    }
+    </script>
+</head>
+<body>
+    <form action="javascript:experience();">
+        <label for="pearls">Experience:&nbsp;</label><input type="text" id="pearls" value="Pearls" autofocus oninput="experience();"/>
+    </form>
+    <p id="lyrics"><noscript>If JavaScript is disabled, nothing will happen</noscript></p>
+</body>
+</html>
