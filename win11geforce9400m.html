@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>How to set up Windows 10/11 on 2009 Mac with GeForce 9400M</title>
+        <link href="style.css" rel="stylesheet" type="text/css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-85225251-1', 'auto');
+  ga('send', 'pageview');
+
+    </script>
+    <style type="text/css">
+    table tr:first-child td, table tr td:first-child, table tr td a, table tr td a:visited {
+        font-weight: bold;
+        background-color: dimgray;
+        color: white;
+    }
+    table {
+        border-collapse: collapse;
+    }
+    td {
+        border: 1px gray solid;
+        padding: .5em;
+        text-align: left;
+    }
+    </style>
+    </head>
+    <body>
+        <div class="thecomputerguyninetysix">
+        <h1>Windows 10/11 on a 2009 Mac with GeForce 9400M</h1>
+        <hr/>
+        <div class="text">
+<p>It is not difficult to install, but it is difficult to get brightness adjustment working, <a href="https://youtu.be/3xsU7J45i5s" target="_blank">as shown in this video.</a> We do not want it stuck at the maximum. If you follow some steps, brightness adjustment will work.<br>The trick is to <strong>use legacy mode</strong> instead of EFI mode. EFI mode is usually better, but not this time.<br>Needless to say, this machine does not support Windows 11 officially, so installing in legacy mode doesn't make things any less supported. Security updates will arrive, but future builds like 23H2, 24H2 and so on will require manual installation with workarounds.</p>
+<p><a href="https://www.youtube.com/watch?v=AuOtTLdPC44" target="_blank">The setup process is explained in this video</a>. This page is the written version.</p>
+<h3>Boot up Windows 10/11 in legacy mode on a Mac with optical drive</h3>
+<p>Normally a Mac cannot boot up from USB flash drives in legacy mode, only optical disks (USB or internal). Download the ISO file for <a href="https://www.microsoft.com/software-download/windows10" target="_blank">Windows 10</a> or <a href="https://www.microsoft.com/software-download/windows11" target="_blank">Windows 11</a>, then pick one of these two options:</p>
+
+<h4>With a DVD</h4>
+<ol>
+<li>Burn the Windows ISO file to a dual-layer DVD R.</li>
+<li>Start up your Mac while holding down Alt or Option. Insert your burned DVD if you haven't already.</li>
+<li>Wait for your DVD to appear and then choose the &quot;Windows&quot; option. DO NOT choose &quot;EFI Boot&quot;.</li>
+</ol>
+<p>This option may not work with Windows 11 because the system requirements are not bypassed, but maybe you can <a href="https://www.tomshardware.com/how-to/bypass-windows-11-tpm-requirement" target="_blank">bypass them from the Windows installer after it's started.</a></p>
+
+<h4>With a flash drive</h4>
+<ol>
+<li>Using <a href="https://rufus.ie" target="_blank">Rufus</a> on a Windows computer, write the Windows ISO file to a USB flash drive in MBR mode (with system requirements bypass if using Windows 11).</li>
+<li>Burn Plop Boot Manager to a CD (<a href="https://download.plop.at/files/bootmngr/plpbt-5.0.15.zip" target="_blank">download Plop from this zip file</a> and burn <code>plpbt.iso</code>, you don't need the other files).</li>
+<li>Start up your Mac while holding down Alt or Option. Plug in your Windows flash drive and insert your Plop CD if you haven't already.</li>
+<li>Wait for your CD to appear and then choose the &quot;Windows&quot; option with CD icon. DO NOT choose &quot;EFI Boot&quot; or your flash drive.</li>
+<li>Plop will start and show a menu on the top left. Select USB.</li>
+</ol>
+<p>If you're using a USB optical drive, unplug it before selecting USB. Only keep your flash drive plugged in.<br>If it doesn't load after selecting USB, restart and plug in the flash drive to a different USB port.<p>
+
+<h3>Installation</h3>
+<p>If the Windows boot screen and installer are not at your native display resolution (they look blurry and stretched), you've successfully booted up in legacy mode, so you can begin installation. If not (it looks nice and sharp), you're in EFI mode which is not correct in this case, so shut down and try again.<br>Install Windows as normal. Make sure you choose the right partition if dual-booting, or you will delete your other OS and data.<p>
+
+<h3>Post-installation</h3>
+<p>It is recommended to stay disconnected from the Internet while following the first three steps.</p>
+<ol>
+<li>Get the Boot Camp 4.0 Windows support software from the Boot Camp Assistant app on Mac OS (save it to a flash drive) or from <a href="https://github.com/timsutton/brigadier#brigadier" target="_blank">Brigadier</a> on Windows (this Mac is model <code>MacBookPro5,4</code>, similar models use the same files). Right-click on setup.exe, go to Properties, and enable compatibility mode for Windows 7. Then install it.<br>When it asks to restart, DO NOT RESTART.</li>
+<li>Go to the folder \Windows\System32\Drivers and replace MacHALDriver.sys with <a href="files/MacHALDriver.sys" target="_blank">this newer version.</a><br>Now you can restart.</li>
+<li>Update the GeForce 9400M drivers to the newest version, <a href="https://www.nvidia.com/Download/driverResults.aspx/112600/en-us/" target="_blank">342.01.</a></li>
+<li>Open Regedit, go to HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\{4D36E968-E325-11CE-BFC1-08002BE10318}\0000, create a DWORD 32-bit value called EnableBrightnessControl and set it to 1. <a href="files/EnableBrightnessControl.reg" target="_blank">(Or just download and install this registry key.)</a><br>You may have to restart again.</li>
+<li><a href="https://crystalidea.com/macs-fan-control" target="_blank">Download Macs Fan Control</a> and set it up to speed up the fan based on the CPU Diode temperature. If you do not do this adequately, your CPU will run too hot and it could damage your computer. A CPU should normally be under 80°C. (It is a good idea to use that program on Mac OS too.)</li>
+<li>If in Device Manager you see a device called &quot;Coprocessor&quot; with missing driver, you can get it from here: <a href="files/NVIDIA nForce System Management Controller.zip" target="_blank">NVIDIA nForce System Management Controller</a>. Extract it, right-click on <code>oem35.inf</code> and select Install.</li>
+<li>(Optional) <a href="https://github.com/imbushuo/mac-precision-touchpad/releases/latest" target="_blank">You can get improved trackpad drivers to meet Windows Precision Touchpad specifications.</a> Download the <code>amd64</code> version, extract it, right-click on <code>AmtPtpDevice.inf</code> and select Install.</li>
+</ol>
+<p>After installing any available Windows updates, your Windows installation on this older Mac should be ready to use.</p>
+<p>If you are dual booting and the time keeps changing when switching between OSs, open Regedit, go to HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\TimeZoneInformation, create a DWORD 32-bit value called RealTimeIsUniversal and set it to 1. <a href="files/RealTimeIsUniversal.reg" target="_blank">(Or just download and install this registry key.)</a> This can be used on any computer with Windows dual boot.</p>
+<h3>If the screen locks up, restart the video driver by pressing Shift+Ctrl+Cmd+B or Shift+Ctrl+Windows+B.</h3>
+<p>Sometimes the whole computer may lock up when waking up from sleep or hibernate mode, requiring a reset. I have not found a solution to this.<br>If you have any feedback, <a href="https://www.youtube.com/watch?v=AuOtTLdPC44" target="_blank">comment on my YouTube video.</a></p>
+<p></p>
+        <p id="bottom"><em>TheComputerGuy96</em><br>Last updated on Jun 15, 2023</p>
+        </div>
+        </div>
+    </body>
+</html>
