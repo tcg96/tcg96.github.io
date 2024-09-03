@@ -36,12 +36,15 @@
         <h1>Windows 10/11 on a 2009 Mac with GeForce 9400M</h1>
         <hr/>
         <div class="text">
-<p>It is not difficult to install, but it is difficult to get brightness adjustment working, <a href="https://youtu.be/3xsU7J45i5s" target="_blank">as shown in this video.</a> We do not want it stuck at the maximum. If you follow some steps, brightness adjustment will work.<br>The trick is to <strong>use legacy mode</strong> instead of EFI mode. EFI mode is usually better, but not this time.</p>
+<p>It is not difficult to install, but it is difficult to get brightness adjustment working, <a href="https://youtu.be/3xsU7J45i5s" target="_blank">as shown in this YouTube video.</a> We do not want it stuck at the maximum. If you follow some steps, brightness adjustment will work.<br>The trick is to <strong>use legacy mode</strong> instead of EFI mode. EFI mode is usually better, but not this time.</p>
 <p><a href="https://www.youtube.com/watch?v=AuOtTLdPC44" target="_blank">The setup process is explained in this video</a>. This page is the written version.</p>
-<p>Needless to say, this machine does not support Windows 11 officially, so installing in legacy mode does not make things any less supported. Security updates will arrive, but they will end eventually. Feature updates that include more security updates, like 23H2, 24H2 and so on, will require manual installation with workarounds.<br>
+
+<h3>A note about Windows 11 support</h3>
+<p>Needless to say, this machine does not support Windows 11 officially, so installing in legacy mode does not make things any less supported. Security updates will arrive, but they will end eventually. Security updates have already ended for version 21H2. They end in October 2024 for 11 version 22H2, October 2025 for 10 version 22H2, November 2025 for 11 version 23H2.<br>
+Newer Windows 11 feature updates that include more security updates, like 24H2 and so on, may not run at all because the kernel is updated to absolutely require a newer CPU from at least 2010.<br>
 If you have Windows 11 version 22H2 on an unsupported computer (not just a Mac), and it is fully updated with Windows Update, you can get <a href="https://www.elevenforum.com/t/kb5027397-enablement-package-for-windows-11-version-23h2-feature-update.19372/" target="_blank">this enablement package</a> (x64 version) to update to version 23H2 (also shown in <a href="https://youtube.com/shorts/LZ4Xl2NjuDU" target="_blank">this short video</a>).</p>
 
-<h3>Boot up Windows 10/11 in legacy mode on a Mac with optical drive</h3>
+<h3>Boot up the Windows 10/11 installer in legacy mode on a Mac with optical drive</h3>
 <p>Normally a Mac cannot boot up from USB flash drives in legacy mode, only optical disks (USB or internal). This means you need a CD or DVD.<br>
 If your Mac's internal optical drive is removed or broken, you can use an external USB optical drive.
 <p>Download the ISO file for <a href="https://www.microsoft.com/software-download/windows10" target="_blank">Windows 10</a> or <a href="https://www.microsoft.com/software-download/windows11" target="_blank">Windows 11</a>, then pick one of these two options:</p>
@@ -72,19 +75,19 @@ Alternatively, you can copy the Windows ISO file to a flash drive set up with <a
 <p>It is recommended to stay disconnected from the Internet while following the first three steps.</p>
 <ol>
 <li>Get the Boot Camp 4.0 Windows support software from the Boot Camp Assistant app on Mac OS (save it to a flash drive) or from <a href="https://github.com/timsutton/brigadier#brigadier" target="_blank">Brigadier</a> on Windows (this Mac is model <code>MacBookPro5,4</code>, similar models use the same files). Right-click on setup.exe, go to Properties, and enable compatibility mode for Windows 7. Then install it.<br>When it asks to restart, DO NOT RESTART.</li>
-<li>Go to the folder \Windows\System32\Drivers and replace MacHALDriver.sys with <a href="files/MacHALDriver.sys" target="_blank">this newer version.</a><br>Now you can restart.</li>
+<li>Go to the folder \Windows\System32\Drivers and replace MacHALDriver.sys with <a href="files/MacHALDriver.sys" target="_blank">this newer version.</a><br>Now you can restart.<br>(If you accidentally restarted before replacing this file, you can boot from a live USB drive of a Linux distribution, even in EFI mode, to replace the file.)</li>
 <li>Update the GeForce 9400M drivers to the newest version, <a href="https://www.nvidia.com/Download/driverResults.aspx/112600/en-us/" target="_blank">342.01.</a></li>
-<li>Open Regedit, go to HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\{4D36E968-E325-11CE-BFC1-08002BE10318}\0000, create a DWORD 32-bit value called EnableBrightnessControl and set it to 1. <a href="files/EnableBrightnessControl.reg" target="_blank">(Or just download and install this registry key.)</a><br>You may have to restart again.</li>
-<li><a href="https://crystalidea.com/macs-fan-control" target="_blank">Download Macs Fan Control</a> and set it up to speed up the fan based on the temperature of CPU Proximity or CPU Diode. If you do not do this adequately, your CPU will run too hot and it could damage your computer. A CPU should normally be under 80°C. (It is also a good idea to use that program on Mac OS on any Intel Mac.)</li>
+<li style="text-align: left;">Open Regedit, go to HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\{4D36E968-E325-11CE-BFC1-08002BE10318}\0000, create a DWORD 32-bit value called EnableBrightnessControl and set it to 1. <a href="files/EnableBrightnessControl.reg" target="_blank">(Or just download and install this registry key.)</a> This registry edit will have NO effect if you installed Windows in EFI mode on this Mac.<br>You may have to restart again.</li>
+<li><a href="https://crystalidea.com/macs-fan-control" target="_blank">Download Macs Fan Control</a> and set it up to speed up the fan based on the temperature of CPU Proximity or CPU Diode. A good setting is to start speeding up the fan past 40°C, max speed at 80°C. If you do not set up this app adequately, your CPU will run too hot and it could damage your computer.<br>(It is also a good idea to use that program on Mac OS on any Intel Mac.)</li>
 <li>If in Device Manager you see a device called &quot;Coprocessor&quot; with missing driver, you can get it from here: <a href="files/NVIDIA nForce System Management Controller.zip" target="_blank">NVIDIA nForce System Management Controller</a>. Extract it, right-click on <code>oem35.inf</code> and select Install.</li>
 <li>(Optional) <a href="https://github.com/imbushuo/mac-precision-touchpad/releases/latest" target="_blank">You can get improved trackpad drivers to meet Windows Precision Touchpad specifications.</a> Download the <code>amd64</code> version, extract it, right-click on <code>AmtPtpDevice.inf</code> and select Install.</li>
 </ol>
 <p>After installing any available Windows updates, your Windows installation on this older Mac should be ready to use.</p>
-<p>If you are dual booting and the time keeps changing when switching between OSs, open Regedit, go to HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\TimeZoneInformation, create a DWORD 32-bit value called RealTimeIsUniversal and set it to 1. <a href="files/RealTimeIsUniversal.reg" target="_blank">(Or just download and install this registry key.)</a> This can be used on any computer with Windows dual boot.</p>
+<p style="text-align: left;">If you are dual booting and the time keeps changing when switching between OSs, open Regedit, go to HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\TimeZoneInformation, create a DWORD 32-bit value called RealTimeIsUniversal and set it to 1. <a href="files/RealTimeIsUniversal.reg" target="_blank">(Or just download and install this registry key.)</a> This can be used on any computer with Windows dual boot.</p>
 <h3>If the screen locks up, restart the video driver by pressing Shift+Ctrl+Cmd+B or Shift+Ctrl+Windows+B.</h3>
 <p>Sometimes the whole computer may lock up when waking up from sleep or hibernate mode, requiring a reset. I have not found a solution to this.<br>If you have any feedback, <a href="https://www.youtube.com/watch?v=AuOtTLdPC44" target="_blank">comment on my YouTube video.</a></p>
 <p></p>
-        <p id="bottom"><em>TheComputerGuy96</em><br>Last updated on Mar 6, 2024</p>
+        <p id="bottom"><em>TheComputerGuy96</em><br>Last updated on Sep 3, 2024</p>
         </div>
         </div>
     </body>
