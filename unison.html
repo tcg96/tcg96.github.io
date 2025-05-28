@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Unison Generator</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="style.css" rel="stylesheet">
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-85225251-1', 'auto');
+  ga('send', 'pageview');
+
+    </script>
+    <script type="text/javascript">
+        function doStuff() {
+            var no1 = document.getElementById("no1").value;
+            var chek = document.getElementById("chek").checked;
+            var output = "";
+            for (let i = 0; i < no1.length; i++) {
+                if (chek) output += "<sup>" + no1[i] + "</sup>" + no1[i];
+                else output += no1[i] + "<sup>" + no1[i] + "</sup>";
+            }
+            document.getElementById("output1").innerHTML = output;
+            document.getElementById("output2").innerHTML = output.replaceAll("<", "&lt;").replaceAll(">", "&gt;");
+        }
+    </script>
+</head>
+<body>
+<label for="no1">Make two people say this at the same time:</label><br>
+<input type="text" name="no1" id="no1" oninput="javascript:doStuff()" autofocus/>
+<input type="checkbox" name="chek" id="chek" onchange="javascript:doStuff()"/>
+<label for="chek">Superscript first</label>
+<br><noscript>JavaScript must be enabled, or the text box will do nothing.</noscript>
+<br><br>
+<span id="output1"></span>
+<br><br>
+<code id="output2" style="text-align: left;"></code>
+</body>
+</html>
